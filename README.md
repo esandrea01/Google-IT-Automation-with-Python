@@ -1,2 +1,3 @@
 # health-check
-Scripts that check the health of my computers
+Scripts that check the health of all computers in the network.
+
