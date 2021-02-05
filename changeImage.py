@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-from PIL import Image
+ 
 import os
-
-arr = os.listdir()
-for file in arr:
- if file.endswith('tiff'):
-  im = Image.open(file)
-  new_im = im.resize((600,400))
-  new_im.convert('RGB').save('/supplier-data/images'+ file +'.jpeg')
+from PIL import Image
+ 
+path = '/home/erick/images/'
+ 
+for image in os.listdir(path):
+	if '.png' in image and '.' not in image[0]:
+		img = Image.open(path + image)
+		img.resize((600, 400)).convert("RGB").save(path + image.split('.')[0] + '.jpeg' , 'jpeg')
+		img.close()
